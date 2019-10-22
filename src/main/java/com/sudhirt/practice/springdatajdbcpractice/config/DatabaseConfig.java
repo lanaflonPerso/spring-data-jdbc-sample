@@ -13,4 +13,5 @@ public class DatabaseConfig {
 	public AuditorAware<String> auditProvider() {
 		return new AuditorAwareImpl();
 	}
+
 }

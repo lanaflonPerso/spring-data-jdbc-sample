@@ -22,10 +22,7 @@ public class AuthorRepositoryTest {
 
 	@Test
 	public void should_populate_audit_fields_properly_with_values() {
-		Author author = Author.builder()
-				.firstName("John")
-				.lastName("Miller")
-				.dateOfBirth(LocalDate.of(1972, 03, 01))
+		Author author = Author.builder().firstName("John").lastName("Miller").dateOfBirth(LocalDate.of(1972, 03, 01))
 				.build();
 		authorRepository.save(author);
 		assertThat(author.getCreatedBy()).isEqualTo("TEST");
@@ -36,12 +33,10 @@ public class AuthorRepositoryTest {
 
 	@Test
 	public void should_save_successfully() {
-		Author author = Author.builder()
-				.firstName("John")
-				.lastName("Miller")
-				.dateOfBirth(LocalDate.of(1972, 03, 01))
+		Author author = Author.builder().firstName("John").lastName("Miller").dateOfBirth(LocalDate.of(1972, 03, 01))
 				.build();
 		authorRepository.save(author);
 		assertThat(author.getId()).isNotNull();
 	}
+
 }

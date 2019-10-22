@@ -15,15 +15,23 @@ public class Author {
 
 	@Id
 	private Long id;
+
 	private String firstName;
+
 	private String lastName;
+
 	private LocalDate dateOfBirth;
+
 	@CreatedBy
 	private String createdBy;
+
 	@CreatedDate
 	private Instant createdDate;
+
 	@LastModifiedBy
 	private String lastModifiedBy;
+
 	@LastModifiedDate
 	private Instant lastModifiedDate;
+
 }

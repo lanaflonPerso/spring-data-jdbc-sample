@@ -8,4 +8,5 @@ import org.springframework.data.relational.core.mapping.Table;
 public class AuthorRef {
 
 	private Long author;
+
 }

@@ -24,26 +24,21 @@ public class BookRepositoryTest {
 
 	@Test
 	public void createBookWithAuthor() {
-		Author author = Author.builder()
-				.firstName("John")
-				.lastName("Miller")
-				.dateOfBirth(LocalDate.of(1972, 03, 01))
+		Author author = Author.builder().firstName("John").lastName("Miller").dateOfBirth(LocalDate.of(1972, 03, 01))
 				.build();
 		authorRepository.save(author);
 
-		Book book = Book.builder()
-				.name("My Book")
-				.isbn("ISBN1234")
-				.publishedDate(LocalDate.of(2018, 12, 12))
-				.price(12.99)
-				.build();
+		Book book = Book.builder().name("My Book").isbn("ISBN1234").publishedDate(LocalDate.of(2018, 12, 12))
+				.price(12.99).build();
 		book.addAuthor(authorRepository.save(author));
 		bookRepository.save(book);
 
 		assertThat(book.getId()).isNotNull();
 
-		//Book savedBook = bookRepository.findById(book.getId()).orElseThrow(RuntimeException::new);
+		// Book savedBook =
+		// bookRepository.findById(book.getId()).orElseThrow(RuntimeException::new);
 		bookRepository.findAll();
-		//assertThat(savedBook.getAuthorRefList()).size().isEqualTo(1);
+		// assertThat(savedBook.getAuthorRefList()).size().isEqualTo(1);
 	}
+
 }

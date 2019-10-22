@@ -18,17 +18,26 @@ public class Book {
 
 	@Id
 	private Long id;
+
 	private String name;
+
 	private String isbn;
+
 	private Set<AuthorRef> authorRefs;
+
 	private Double price;
+
 	private LocalDate publishedDate;
+
 	@CreatedBy
 	private String createdBy;
+
 	@CreatedDate
 	private Instant createdDate;
+
 	@LastModifiedBy
 	private String lastModifiedBy;
+
 	@LastModifiedDate
 	private Instant lastModifiedDate;
 
@@ -46,4 +55,5 @@ public class Book {
 		authorRef.setAuthor(author.getId());
 		return authorRef;
 	}
+
 }

@@ -20,3 +20,6 @@ git clone git@github.com:st-spring-samples/spring-data-jdbc-sample.git
 ## Features demonstrated
 - Spring Data JDBC usage
 - Flyway DB migrations
+
+## Source formatting
+[Spring Java Format](https://github.com/spring-io/spring-javaformat) plugin is used in this sample for source code formatting. If changes are made to source code, run `mvn spring-javaformat:apply` to reformat code.
