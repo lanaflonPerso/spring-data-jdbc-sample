@@ -1,18 +1,13 @@
 package com.sudhirt.practice.springdatajdbcpractice.repository;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import java.time.LocalDate;
 import com.sudhirt.practice.springdatajdbcpractice.entity.Author;
 import com.sudhirt.practice.springdatajdbcpractice.entity.Book;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
-import java.time.LocalDate;
-
-import static org.assertj.core.api.Assertions.assertThat;
-
-@RunWith(SpringRunner.class)
 @SpringBootTest
 public class BookRepositoryTest {
 
