@@ -1,20 +1,18 @@
 package com.sudhirt.practice.springdatajdbcpractice.entity;
 
-import lombok.Builder;
-import lombok.Data;
-import org.springframework.data.annotation.*;
-import org.springframework.data.relational.core.mapping.Table;
-import org.springframework.util.Assert;
-
-import java.time.Instant;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
+import org.springframework.util.Assert;
+import lombok.Builder;
+import lombok.Data;
 
 @Data
 @Builder
 @Table("BOOK")
-public class Book {
+public class Book extends Auditable {
 
 	@Id
 	private Long id;
@@ -28,18 +26,6 @@ public class Book {
 	private Double price;
 
 	private LocalDate publishedDate;
-
-	@CreatedBy
-	private String createdBy;
-
-	@CreatedDate
-	private Instant createdDate;
-
-	@LastModifiedBy
-	private String lastModifiedBy;
-
-	@LastModifiedDate
-	private Instant lastModifiedDate;
 
 	public void addAuthor(Author author) {
 		if (authorRefs == null) {

@@ -1,17 +1,15 @@
 package com.sudhirt.practice.springdatajdbcpractice.entity;
 
+import java.time.LocalDate;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 import lombok.Builder;
 import lombok.Data;
-import org.springframework.data.annotation.*;
-import org.springframework.data.relational.core.mapping.Table;
-
-import java.time.Instant;
-import java.time.LocalDate;
 
 @Data
 @Builder
 @Table("AUTHOR")
-public class Author {
+public class Author extends Auditable {
 
 	@Id
 	private Long id;
@@ -21,17 +19,5 @@ public class Author {
 	private String lastName;
 
 	private LocalDate dateOfBirth;
-
-	@CreatedBy
-	private String createdBy;
-
-	@CreatedDate
-	private Instant createdDate;
-
-	@LastModifiedBy
-	private String lastModifiedBy;
-
-	@LastModifiedDate
-	private Instant lastModifiedDate;
 
 }
